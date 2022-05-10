@@ -9,18 +9,29 @@ from student_utilities import input, print
 
 def solucion():
     #ACÁ INICIA LA FUNCIÓN SOLUCIÓN (En este espacio debes entregar tu solución)
+    masP = "S"
+    subtotal = 0
+
+    while masP == "S":
+
+        v_uni = int(input("Ingrese el valor unitario: "))
+        iva = input("¿El producto cuenta con IVA? (S/N): ")
+        qty = int(input("Ingrese la cantidad que lleva el cliente del producto a registrar: "))
+        if iva == "S":
+            print("IVA incluído")
+            subtotal = subtotal + 1.19*v_uni*qty
+        else:
+            print("PRODUCTO SIN IVA")
+            subtotal = subtotal + v_uni*qty
+
+        print(f"SUBTOTAL: {subtotal}")
+        x = input("¿Faltan productos por cobrar? S/N: ")
+        if x=="N":
+            masP = "N"
+            print(f"TOTAL A COBRAR: {subtotal}")
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    #ACÁ TERMINA LA FUNCIÓN SOLUCIÓN
+       
+#ACÁ TERMINA LA FUNCIÓN SOLUCIÓN
     
 """
 ¡IMPORTANTE! ¡IMPORTANTE! ¡IMPORTANTE! ¡IMPORTANTE! ¡IMPORTANTE! ¡IMPORTANTE! ¡IMPORTANTE! ¡IMPORTANTE!
