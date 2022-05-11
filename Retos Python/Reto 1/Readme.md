@@ -46,23 +46,61 @@ Los 𝑖𝑛𝑝𝑢𝑡 pueden tener cualquier texto como argumento, pero las f
 Para abordar el problema se plantean bloques de codigo dedicados a las tareas que se solicitan:
 ## Tareas
 1. Solicitar valor unitario. Para ello se usa el metodo *input*, teniendo en cuenta que se debe convertir a entero: 
-    ### code: 
-             v_uni = int(input("Ingrese el valor unitario: "))
+  ### code: 
+           v_uni = int(input("Ingrese el valor unitario: "))
 2. El programa pregunta si el producto tiene IVA. En este caso, sólo se usa *input*, ya que su salida en tipo *string*.    
-    ### code: 
-             iva = input("¿El producto cuenta con IVA? (S/N): ") 
+  ### code: 
+           iva = input("¿El producto cuenta con IVA? (S/N): ") 
 3. Definir cantidad de productos: El programa solicita la cantidad de productos y de igual forma que el primer punto, se usan los métodos *input* e *int*, así:     
-    ### code: 
-             qty = int(input("Ingrese la cantidad que lleva el cliente del producto a registrar: "))  
-4. Si el producto tiene iva, desplegar un mensaje y si no tiene, entonces desplegar otro mensaje. Explicitamente se indica que se debe usar el bloque condicional *IF/ELSE*, y teniendo en cuenta el valor del iva, desplegar los mensajes solicitados, como se muestra a continuación.
- ### code:       
-          if iva == "S":
+  ### code: 
+           qty = int(input("Ingrese la cantidad que lleva el cliente del producto a registrar: "))  
+4. Si el producto tiene iva, desplegar un mensaje y si no tiene, entonces desplegar otro mensaje. Implicitamente se indica que se debe usar el bloque condicional *IF/ELSE*, y teniendo en cuenta el valor del iva, desplegar los mensajes solicitados, como se muestra a continuación.
+  ### code:       
+           if iva == "S":
               print("IVA incluído")`
                subtotal = subtotal + 1.19*v_uni*qty
           else:
               print("PRODUCTO SIN IVA")
               subtotal = subtotal + v_uni*qty 
-   Además se calcula el el iva, cuando aplica y tambien se multiplica el precio por la cantidad del producto. Se utiliza la varable *subtotal*, para almacenar el valor de cada cálculo.
-     
-             
+   Además se calcula el el iva, cuando aplica y tambien se multiplica el precio por la cantidad del producto. Se utiliza la varable *subtotal*, para almacenar el valor de cada cálculo, con iva y sin iva.
+  ### code:
+          print(f"SUBTOTAL: {subtotal}")
+   El subtotal se imprime a la salida del condicional, segun solicita el ejercicio.
+  
+5. El siguiente evento requerido es verificar si hay mas productos por registrar. Como se requiere ingresar S o N para el caso de registro o no de mas productos, se utiliza *input* ya que la variable es del tipo *string*.
+  ### code:
+          x = input("¿Faltan productos por cobrar? S/N: ")
+          if x=="N":
+              masP = "N"
+              print(f"TOTAL A COBRAR: {subtotal}")
+   El condicional *if x=='N'* tiene la funcion de permitir terminar de calcular el total de producto y cambiar la bandera *masP* a *N*, variable con la cual se termina el ciclo *while*. 
+   Toda la logica se enmarca en un ciclo continuo, tipo *while* ya que se pueden ingresar cuantos productos requiera el tendero.
+   
+   ## NOTA: *"Recordar mantener la indentacion (el espacio que debe conservar si estas dentro de una funcion, un ciclo, etc...)*
+          
+  ### code:
+
+            def solucion():
+                #ACÁ INICIA LA FUNCIÓN SOLUCIÓN (En este espacio debes entregar tu solución)
+                masP = "S"
+                subtotal = 0
+
+                while masP == "S":
+
+                    v_uni = int(input("Ingrese el valor unitario: "))
+                    iva = input("¿El producto cuenta con IVA? (S/N): ")
+                    qty = int(input("Ingrese la cantidad que lleva el cliente del producto a registrar: "))
+                    if iva == "S":
+                        print("IVA incluído")
+                        subtotal = subtotal + 1.19*v_uni*qty
+                    else:
+                        print("PRODUCTO SIN IVA")
+                        subtotal = subtotal + v_uni*qty
+
+                    print(f"SUBTOTAL: {subtotal}")
+                    x = input("¿Faltan productos por cobrar? S/N: ")
+                    if x=="N":
+                        masP = "N"
+                        print(f"TOTAL A COBRAR: {subtotal}")
+
 
