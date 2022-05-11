@@ -6,5 +6,6 @@ Contenido con base tecnologica en temas de:
 2. Internet de las cosas
 3. Trading 
 4. Impresion 3D
+5. Automatización
 
 En cada sección se encuentra la biblioteca de datos.
