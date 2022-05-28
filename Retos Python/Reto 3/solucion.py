@@ -7,6 +7,8 @@ Created on Fri May 27 08:13:14 2022
 import numpy as np
 import random
 
+################################################################# 
+# ESTA PARTE ES SOLO PARA PRUEBAS
 """
 Codigo para generar el archivo balotas
 """
@@ -25,7 +27,8 @@ for z in l:
             break
 
 cadena.reverse()
-
+# AQUI TERMINA LA PRUEBA
+################################################################
 
 def balotera(balotas):
     # INICIALIZACION DE VAIABLES
