@@ -1,0 +1,22 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Wed Oct 16 22:26:15 2019
+
+@author: Adrian
+"""
+
+x = int ( input()) 
+y = int ( input()) 
+z = int ( input())
+n = int ( input()) 
+ar = [] 
+p = 0 
+
+for i in range ( x + 1 ) :
+    for j in range( y + 1):
+        for k in range(z + 1):
+            if i+j+k != n: 
+                ar.append([]) 
+                ar[p] = [ i, j, k] 
+                p+=1 
+print(ar)
