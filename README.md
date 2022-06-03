@@ -9,3 +9,6 @@ Contenido con base tecnologica en temas de:
 5. Automatización
 
 En cada sección se encuentra la biblioteca de datos.
+
+Para dar formato al texto:
+[GitHub format](https://docs.github.com/es/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax#quoting-code)
