@@ -60,5 +60,25 @@ def modificar_materia(pensum , semestre, materia, nombre, creditos):
         msg: 'Semester is wrong'
 
 def eliminar_materia(pensum, semestre, materia):
+    p = pensum
+    s = semestre 
+    m = materia 
+    s-=1
+    
+    if es_semestre_valido(p, s):
+        if not es_semestre_vacio(p, s):
+            if es_materia_valida(p, s, m):
+                x = p[s]
+                x.pop(m)
+                
+                msg = 'done'
+            else:
+                msg = "Course don't exist"
+        else:
+            msg = 'Semester is empty'
+    else: 
+        msg ='Semester is wrong'
+    
+    return msg
     
 
