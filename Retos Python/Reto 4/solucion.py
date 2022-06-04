@@ -17,8 +17,8 @@ def es_semestre_valido(p, s):
     # Pensum / Semestre
     # Semestre empieza en 1, y la ista en 0
     s_qty = len(p)
-    #s-=1                                         # Logitud de la lista, igual a cantidad de semestres
-    if s <= 0 or s > s_qty:                                 # Si el semestre es menor a 0 o mayor a la cantidad, retorna False
+    #s-=1                                         
+    if s <= 0 or s > s_qty:                                
         isTrue = False
     else:
         isTrue = True
@@ -58,12 +58,7 @@ def modificar_materia(pensum, semestre, materia, nombre, creditos):
                 p[s][m]['nombre'] = n
                 p[s][m]['créditos'] = c
                 msg = True
-            else:
-                msg = False
-        else:
-            msg = False
-    else: 
-        msg = False    
+            
     
     
     # ACÁ TERMINA LA FUNCIÓN
@@ -83,12 +78,7 @@ def eliminar_materia(pensum, semestre, materia):
                 x.pop(m)
                 
                 msg = True
-            else:
-                msg = False
-        else:
-            msg = False
-    else: 
-        msg = False
+           
     
     # ACÁ TERMINA LA FUNCIÓN
     # ESTA VEZ TU DEFINES TUS RETORNOS
