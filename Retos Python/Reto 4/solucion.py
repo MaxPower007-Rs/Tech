@@ -16,8 +16,7 @@ def es_semestre_valido(p, s):
     # ESTA VEZ TU DEFINES TUS RETORNOS
     # Pensum / Semestre
     # Semestre empieza en 1, y la ista en 0
-    s_qty = len(p)
-    #s-=1                                         
+    s_qty = len(p)                                        
     if s <= 0 or s > s_qty:                                
         isTrue = False
     else:
@@ -48,7 +47,6 @@ def modificar_materia(pensum, semestre, materia, nombre, creditos):
     m = materia 
     n = nombre 
     c = creditos
-    #msg =''
     s-=1
     
     
@@ -75,8 +73,7 @@ def eliminar_materia(pensum, semestre, materia):
         if not es_semestre_vacio(p, s):
             if es_materia_valida(p, s, m):
                 x = p[s]
-                x.pop(m)
-                
+                x.pop(m)                
                 msg = True
            
     
