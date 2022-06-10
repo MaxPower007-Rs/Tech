@@ -1,24 +1,19 @@
 # MQTT
 ## By [Naveen PS](https://www.linkedin.com/posts/naveenpsofficial_mqtt-iot-packet-activity-6939899955394285568-hLJu/?utm_source=linkedin_share&utm_medium=member_desktop_web)
-
+## Topic 1
 Contribution Naveen PS
 MQTT is Message Queuing Telemetry Transport Right? - NO! WRONG!
-
 It's Simply
-
 MQ Telemetry Transport
-
 The MQ is in reference to a product called IBM MQ.
-
-I will be posting MQTT related concepts and their practical use cases for next few days. Follow my LinkedIn profile to get updates.
+I will be posting MQTT related concepts and their practical use cases for next few days. 
+Follow my LinkedIn profile to get updates.
 #mqtt #iot
 
 𝑴𝑸𝑻𝑻 𝑰𝒏𝒔𝒊𝒈𝒉𝒕𝒔 : 1
-
+## Topic 2
 We got MQTT 5 after MQTT 3.1.1. What happened to MQTT 4?!
-
 The answer lies hidden inside the Variable Header part of the MQTT CONNECT Packet.
-
 To be exact, we need to examine an 8 bit unsigned value that represents the version shown in the below picture.
 For MQTT 3.1 - this is 0x03
 For MQTT 3.1.1 -  this is 0x04 
@@ -34,12 +29,10 @@ Do check it out: More MQTT Insights are coming daily for the next week.
 
 ![image](https://user-images.githubusercontent.com/56212392/172646440-f9462038-a2e9-4b0d-89a0-e9a6a436a026.png)
 
+## Topic 3
 We explain MQTT in terms of publishers & subscribers. Instead, we should always understand & implement in terms of Clients & the Broker. Why?
-
 A Client can be a publisher & subscriber at the same time!
-
 By teaching/learning in terms of publishers & subscribers, we are unnecessarily complicating things. 
-
 Thus, in the same client code, we can use functions to publish and subscribe to topics.
 
 Example Scenario: 
@@ -47,6 +40,7 @@ Imagine a fleet of sensors in a factory all publishing real time values to an MQ
 
 This is Post 3 of my 𝑴𝑸𝑻𝑻 𝑰𝒏𝒔𝒊𝒈𝒉𝒕𝒔 Series.
 
+## Topic 4
 A Last Will & Testament is a legal document used to transfer assets to beneficiaries after death. MQTT also has a Last Will & Testament feature! Curious?!
 
 Imagine that you have deployed hundreds of sensor nodes across a factory in hard-to-reach places. Essentially, it's hard to debug or diagnose manually. Now, say, around half a dozen of the sensor nodes over a period of a week disconnects ungracefully or are non-responsive. If you have not implemented the Last Will & Testament Feature (LWT) it will be a pain to pinpoint the exact sensors that are non-responsive.
@@ -71,6 +65,8 @@ A Dashboard Client can subscribe to /failedsensor/ topic and when any sensor dis
 This is Post 4 of my 𝑴𝑸𝑻𝑻 𝑰𝒏𝒔𝒊𝒈𝒉𝒕𝒔 Series.
 
 ![image](https://user-images.githubusercontent.com/56212392/172646716-ee1e51fb-bb9c-4f27-9c69-238c720ca8e7.png)
+
+## Topic 4
 
 MQTT provides Level 2 QoS to ensure that a message is sent exactly once - no duplicates, no loss. So you publish with QoS 2, but still the subscriber client receives messages unreliably! Why? Understanding this is very important for mission-critical applications.
 
@@ -257,19 +253,67 @@ ENCRYPTION:
 3. X509 Client Certificate Based Security
 
 
-This is Post 10 of my 𝑴𝑸𝑻𝑻 𝑰𝒏𝒔𝒊𝒈𝒉𝒕𝒔 Series. Previous Posts can be found below:
-1. https://lnkd.in/d9uCZUcU
-2. https://lnkd.in/dcwnM435
-3. https://lnkd.in/d7rSkw_M
-4. https://lnkd.in/dsFP59vd
-5. https://lnkd.in/dEHfQfQe
-6. https://lnkd.in/dercVDTp
-7. https://lnkd.in/d8Z3H734
-8. https://lnkd.in/dvd9tyiC
-9. https://lnkd.in/dQSYPNx8
+This is Post 10 of my 𝑴𝑸𝑻𝑻 𝑰𝒏𝒔𝒊𝒈𝒉𝒕𝒔 Series. 
+
+Unlike Software, Security breaches in IoT can literally harm real people. If MQTT is implemented, then make sure to properly use & implement the Security Features in it.
+
+As MQTT is an Application Protocol built on top of TCP/IP, all Network Level and Transport Level Security is the same as any TCP/IP Application. On the application level MQTT provides many Security Features.
+
+Let's do an overview, so that you understand the flexibility and depth of Security in MQTT.
+
+AUTHENTICATION:
+1. MQTT authentication with Username + Password - but these are present as plain text on the CONNECT Packet
+
+2. MQTT Authentication with Username + Password + Unique Client ID
+
+3. Message Data Integrity Check - MQTT PUBLISH packets can contain Checksum that verifies the contents of the packet haven't been tampered with.
+
+AUTHORIZATION:
+1. This is configured in the Broker. It has the following control over what a Client is allowed to do
+   a.Allowed topic
+   b.Allowed operation - publish, subscribe, both
+   c.Allowed QoS level (0, 1, 2, all)
+
+2. OAuth 2.0-based Authentication - Allows a client to access a resource that is owned by a resource owner without giving unencrypted credentials to the client
+
+ENCRYPTION:
+1. Transport Layer Encryption with TLS/SSL
+2. MQTT Payload Encryption on top of  TLS/SSL
+3. X509 Client Certificate Based Security
+
+
+This is Post 10 of my 𝑴𝑸𝑻𝑻 𝑰𝒏𝒔𝒊𝒈𝒉𝒕𝒔 Series. 
+
+I have published 10 MQTT Posts over the last few weeks. By now, you may have realized MQTT is much more than just publish-subscribe. All the features discussed are just on the older MQTT 3.1.1 Version.
+
+Stay Tuned for MQTT V5 Insights
+![image](https://user-images.githubusercontent.com/56212392/173137882-c83b8d72-edd9-430f-8973-025a49159fe0.png)
 
 I have published 10 MQTT Posts over the last few weeks. By now, you may have realized MQTT is much more than just publish-subscribe. All the features discussed are just on the older MQTT 3.1.1 Version.
 
 Stay Tuned for MQTT V5 Insights
 
 ![image](https://user-images.githubusercontent.com/56212392/172646150-38d6b00a-4460-4aaa-99d8-3c09e7a3ce6d.png)
+
+I have published 10 MQTT Posts over the last few weeks. By now, you may have realized MQTT is much more than just publish-subscribe. All the features discussed are just on the older MQTT 3.1.1 Version.
+
+MQTT v5 Brings a lot more, I MEAN A LOT MORE! - More than 20 New meaningful upgrades!
+
+To get a Technical Deep Dive into MQTT 5 Features, check out the following Link: [MQTT 5.0](https://lnkd.in/d-Uas5HX)
+
+For those who haven’t been able to follow all of my 10 Posts on MQTT 3.1.1, you can refer the following list:
+1. [Actual Meaning of MQTT](https://lnkd.in/d9uCZUcU)
+2. [What happened to MQTT V4](https://lnkd.in/dcwnM435)
+3. [Learning & Understanding MQTT Concepts](https://lnkd.in/d7rSkw_M)
+4. [Last Will & Testament](https://lnkd.in/dsFP59vd)
+5. [QoS Levels in MQTT](https://lnkd.in/dEHfQfQe)
+6. [When to use which QoS?](https://lnkd.in/dercVDTp)
+7. [Retained Messages](https://lnkd.in/d8Z3H734)
+8. [Wildcards in MQTT](https://lnkd.in/dvd9tyiC)
+9. [Persistent Session in MQTT](https://lnkd.in/dQSYPNx8)
+10. [Security in MQTT](https://lnkd.in/dnx4pds8)
+
+For more such useful embedded related posts, please follow my LinkedIn Profile & you can subscribe my YouTube Channel: [YouTube](https://lnkd.in/gVVtf9qH)
+
+![image](https://user-images.githubusercontent.com/56212392/173138026-f7425b9a-8e0c-49cd-b7b4-cd330a6f7076.png)
+
